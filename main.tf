@@ -78,18 +78,38 @@ module "prometheus-service-discovery" {
 
 data "aws_iam_policy_document" "service-discovery" {
   statement {
-    sid = "Prometheus"
+    sid = "PrometheusECSTasks"
 
     effect = "Allow"
 
     actions = [
-      "ecs:*"
+      "ecs:ListClusters",
+      "ecs:ListTasks",
+      "ecs:DescribeTask",
+      "ecs:DescribeInstances",
+      "ecs:DescribeContainerInstances",
+      "ecs:DescribeTasks",
+      "ecs:DescribeTaskDefinition"
     ]
 
     resources = [
       "*"
     ]
   }
+//
+//  statement {
+//    sid = "PrometheusECSCluster"
+//
+//    effect = "Allow"
+//
+//    actions = [
+//      "ecs:ListClusters"
+//    ]
+//
+//    resources = [
+//      "*"
+//    ]
+//  }
 }
 
 resource "aws_iam_role_policy" "service-discovery" {

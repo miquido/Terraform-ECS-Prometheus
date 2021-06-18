@@ -94,12 +94,12 @@ variable "tags" {
 
 variable "task_cpu" {
   type        = number
-  default     = 512
+  default     = 256
   description = "ECS task cpu for prometheus"
 }
 
 variable "task_memory" {
   type        = number
-  default     = 1024
+  default     = 512
   description = "ECS task memory for prometheus"
 }

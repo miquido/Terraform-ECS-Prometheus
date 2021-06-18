@@ -2,11 +2,15 @@
 [![Miquido][logo]](https://www.miquido.com/)
 
 # miquido-terraform-
-This module will deploy prometheus server with ecs service discovery into your ECS cluster. You can setup optionally to expose it via Application Load Balancer. You can also enable App mesh for this service.
-To enable service discovery please add Docker labels in the task definitions that you want to discover. for example:
-  PROMETHEUS_EXPORTER_PORT  8080
-  PROMETHEUS_EXPORTER_PATH  /actuator/prometheus 
+This module will deploy prometheus server with ecs service discovery into your ECS cluster.
+You can setup optionally to expose it via Application Load Balancer. You can also enable App mesh for this service.
 
+To enable service discovery please add Docker labels in the task definitions that you want to discover.
+for example:
+```hcl
+  PROMETHEUS_EXPORTER_PORT  8080
+  PROMETHEUS_EXPORTER_PATH  /actuator/prometheus
+```
 ---
 **Terraform Module**
 
