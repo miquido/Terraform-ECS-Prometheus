@@ -1,8 +1,8 @@
 ---
 include:
-  - remote: 'https://raw.githubusercontent.com/miquido/gitlab-templates/1.3.18/workflow-default.yml'
-  - remote: 'https://raw.githubusercontent.com/miquido/gitlab-templates/1.3.18/terraform-toolkit.yml'
-  - remote: 'https://raw.githubusercontent.com/miquido/gitlab-templates/1.3.18/git-toolkit.yml'
+  - remote: 'https://raw.githubusercontent.com/miquido/gitlab-templates/1.3.25/workflow-default.yml'
+  - remote: 'https://raw.githubusercontent.com/miquido/gitlab-templates/1.3.25/terraform-toolkit.yml'
+  - remote: 'https://raw.githubusercontent.com/miquido/gitlab-templates/1.3.25/git-toolkit.yml'
 
 get-latest-terraform:
   extends: .get-latest-terraform
