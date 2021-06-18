@@ -96,20 +96,20 @@ data "aws_iam_policy_document" "service-discovery" {
       "*"
     ]
   }
-//
-//  statement {
-//    sid = "PrometheusECSCluster"
-//
-//    effect = "Allow"
-//
-//    actions = [
-//      "ecs:ListClusters"
-//    ]
-//
-//    resources = [
-//      "*"
-//    ]
-//  }
+  //
+  //  statement {
+  //    sid = "PrometheusECSCluster"
+  //
+  //    effect = "Allow"
+  //
+  //    actions = [
+  //      "ecs:ListClusters"
+  //    ]
+  //
+  //    resources = [
+  //      "*"
+  //    ]
+  //  }
 }
 
 resource "aws_iam_role_policy" "service-discovery" {
