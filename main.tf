@@ -119,7 +119,7 @@ resource "aws_iam_role_policy" "service-discovery" {
 
 module "ecs-alb-task-prometheus-envoy-proxy" {
   count                             = local.app_mesh_count
-  source                            = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-envoy.git?ref=tags/1.1.1"
+  source                            = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-envoy.git?ref=tags/1.1.3"
   appmesh-resource-arn              = module.prometheus-appmesh[count.index].appmesh-resource-arn
   awslogs-group                     = module.ecs-alb-task-prometheus.log_group_name
   awslogs-region                    = var.aws_region
