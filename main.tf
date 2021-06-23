@@ -4,11 +4,11 @@ locals {
   prometheus_service_image_repository  = "miquidocompany/prometheus"
   prometheus_service_image_tag         = "1.0.0"
   appmesh_prometheus_service_dns       = "${var.service_name}.${local.appmesh_domain}"
-  appmesh_prometheus_cloud_map_dns     = var.aws_service_discovery_private_dns_namespace != null ? replace(local.appmesh_prometheus_service_dns, local.appmesh_domain, var.aws_service_discovery_private_dns_namespace.name) : null
+  appmesh_prometheus_cloud_map_dns     = var.aws_service_discovery_private_dns_namespace.name != null ? replace(local.appmesh_prometheus_service_dns, local.appmesh_domain, var.aws_service_discovery_private_dns_namespace.name) : null
   appmesh_domain                       = "${var.environment}.app.mesh.local"
 
   alb_target_group_arn = join("", module.alb-ingress-prometheus.*.target_group_arn)
-  app_mesh_count       = var.aws_service_discovery_private_dns_namespace != null && var.aws_appmesh_mesh_id != null && var.mesh_route53_zone_id != null ? 1 : 0
+  app_mesh_count       = var.enable_app_mesh ? 1 : 0
 }
 
 module "alb-ingress-prometheus" {
@@ -202,6 +202,7 @@ module "ecs-alb-task-prometheus" {
       base              = null
     }
   ]
+  security_group_description = "Allow ALL egress from ECS service"
 }
 
 module "prometheus-appmesh" {

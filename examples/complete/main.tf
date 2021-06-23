@@ -44,5 +44,5 @@ module "prometheus" {
     alb_dns_name       = "test"
     alb_zone_id        = "test"
   }
-  domain = "test" // local.prometheus_service_domain
+  domain = local.prometheus_service_domain
 }

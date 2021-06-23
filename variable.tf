@@ -103,3 +103,9 @@ variable "task_memory" {
   default     = 512
   description = "ECS task memory for prometheus"
 }
+
+variable "enable_app_mesh" {
+  type        = bool
+  default     = true
+  description = "Should appmesh resources be created. Required vars: aws_service_discovery_private_dns_namespace, aws_appmesh_mesh_id, mesh_route53_zone_id"
+}
