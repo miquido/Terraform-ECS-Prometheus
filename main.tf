@@ -207,7 +207,7 @@ module "ecs-alb-task-prometheus" {
 
 module "prometheus-appmesh" {
   count                    = local.app_mesh_count
-  source                   = "git::ssh://git@gitlab.com/miquido/terraform/terraform-app-mesh-service.git?ref=tags/1.0.1"
+  source                   = "git::ssh://git@gitlab.com/miquido/terraform/terraform-app-mesh-service.git?ref=tags/1.0.2"
   app_health_check_path    = local.prometheus_service_health_check_path
   app_port                 = local.prometheus_service_port
   appmesh_domain           = local.appmesh_domain
