@@ -32,9 +32,12 @@ module "prometheus" {
     id          = "test"
     hosted_zone = "test"
   }
-  aws_appmesh_mesh_id  = "test" // aws_appmesh_mesh.service.id
-  mesh_route53_zone_id = "test" // aws_route53_zone.mesh_private_zone.zone_id
 
+  app_mesh_id = "test"      // aws_appmesh_mesh.service.id
+  app_mesh_route53_zone = { // aws_route53_zone.mesh_private_zone
+    id   = "test"
+    name = "test"
+  }
   /*********** Optional alb ************/
   route53_zone_id = "test" //aws_route53_zone.default.zone_id
   alb = {                  // module.alb
