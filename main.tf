@@ -44,6 +44,19 @@ resource "aws_route53_record" "prometheus" {
   }
 }
 
+resource "aws_route53_record" "prometheus-ipv6" {
+  count   = var.alb != null && var.domain != null ? 1 : 0
+  zone_id = var.route53_zone_id
+  name    = var.domain
+  type    = "AAAA"
+
+  alias {
+    name                   = var.alb.alb_dns_name
+    zone_id                = var.alb.alb_zone_id
+    evaluate_target_health = true
+  }
+}
+
 module "prometheus-service-discovery" {
   source = "git::https://github.com/cloudposse/terraform-aws-ecs-container-definition.git?ref=tags/0.57.0"
 

@@ -29,7 +29,6 @@ variable "vpc" {
     vpc_main_security_group_id = string
     vpc_id                     = string
     private_subnet_ids         = list(string)
-    vpc_main_security_group_id = string
   })
   description = "VPC module ssh://git@gitlab.com/miquido/terraform/terraform-vpc.git"
 }
