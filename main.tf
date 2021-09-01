@@ -58,7 +58,7 @@ resource "aws_route53_record" "prometheus-ipv6" {
 }
 
 module "prometheus-service-discovery" {
-  source = "git::https://github.com/cloudposse/terraform-aws-ecs-container-definition.git?ref=tags/0.57.0"
+  source = "git::https://github.com/cloudposse/terraform-aws-ecs-container-definition.git?ref=tags/0.58.1"
 
   command = [
     "-config.write-to",
