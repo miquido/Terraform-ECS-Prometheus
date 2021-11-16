@@ -113,7 +113,7 @@ resource "aws_iam_role_policy" "service-discovery" {
 }
 
 module "ecs-alb-task-prometheus" {
-  source = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git?ref=tags/5.6.10"
+  source = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git?ref=tags/5.6.11"
 
   name                     = var.service_name
   project                  = var.project
