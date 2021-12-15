@@ -1,6 +1,6 @@
-name: miquido-terraform-
+name: miquido-terraform-ecs-prometheus
 repos:
-  gitlab: miquido/terraform-
+  gitlab: miquido/terraform/terraform-ecs-prometheus
 badges: []
 related: []
 description: |-
