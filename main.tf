@@ -9,7 +9,7 @@ locals {
 
 module "alb-ingress-prometheus" {
   count       = var.alb != null ? 1 : 0
-  source      = "git::ssh://git@gitlab.com/miquido/terraform/terraform-alb-ingress.git?ref=3.1.17"
+  source      = "git::ssh://git@gitlab.com/miquido/terraform/terraform-alb-ingress.git?ref=3.1.18"
   name        = var.service_name
   project     = var.project
   environment = var.environment
@@ -113,7 +113,7 @@ resource "aws_iam_role_policy" "service-discovery" {
 }
 
 module "ecs-alb-task-prometheus" {
-  source = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git?ref=5.6.21"
+  source = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git?ref=5.6.24"
 
   name                     = var.service_name
   project                  = var.project
