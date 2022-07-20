@@ -3,4 +3,4 @@ build-harness
 .terraform
 *.tfstate
 *.tfstate.backup
-
+.vscode

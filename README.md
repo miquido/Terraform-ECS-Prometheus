@@ -76,7 +76,7 @@ domain = "test" // local.prometheus_service_domain
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_alb-ingress-prometheus"></a> [alb-ingress-prometheus](#module\_alb-ingress-prometheus) | git::ssh://git@gitlab.com/miquido/terraform/terraform-alb-ingress.git | 3.1.18 |
-| <a name="module_ecs-alb-task-prometheus"></a> [ecs-alb-task-prometheus](#module\_ecs-alb-task-prometheus) | git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git | 5.6.24 |
+| <a name="module_ecs-alb-task-prometheus"></a> [ecs-alb-task-prometheus](#module\_ecs-alb-task-prometheus) | git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git | 5.6.26 |
 | <a name="module_prometheus-service-discovery"></a> [prometheus-service-discovery](#module\_prometheus-service-discovery) | git::https://github.com/cloudposse/terraform-aws-ecs-container-definition.git | 0.58.1 |
 
 ## Resources

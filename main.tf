@@ -113,7 +113,7 @@ resource "aws_iam_role_policy" "service-discovery" {
 }
 
 module "ecs-alb-task-prometheus" {
-  source = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git?ref=5.6.24"
+  source = "git::ssh://git@gitlab.com/miquido/terraform/terraform-ecs-alb-task.git?ref=5.6.26"
 
   name                     = var.service_name
   project                  = var.project
@@ -146,12 +146,20 @@ module "ecs-alb-task-prometheus" {
   module.prometheus-service-discovery.json_map_encoded]
   exec_enabled = true
 
-  volumes = [
+  docker_volumes = [
     {
-      name                        = "service-discovery"
-      host_path                   = null
-      docker_volume_configuration = []
-      efs_volume_configuration    = []
+      name      = "service-discovery"
+      host_path = null
+      docker_volume_configuration = [
+        {
+          scope         = "shared"
+          autoprovision = true
+          driver        = "local"
+          driver_opts   = null
+          labels        = null
+        }
+      ]
+
     }
   ]
 
