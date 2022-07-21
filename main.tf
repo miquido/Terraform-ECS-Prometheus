@@ -9,7 +9,7 @@ locals {
 
 module "alb-ingress-prometheus" {
   count       = var.alb != null ? 1 : 0
-  source      = "git::ssh://git@gitlab.com/miquido/terraform/terraform-alb-ingress.git?ref=3.1.18"
+  source      = "git::ssh://git@gitlab.com/miquido/terraform/terraform-alb-ingress.git?ref=3.1.20"
   name        = var.service_name
   project     = var.project
   environment = var.environment
